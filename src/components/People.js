@@ -11,7 +11,7 @@ const People = () => {
   // data is the result of fetchPlanets()
   // status is the status of the request - eg. 'loading' 'error' 'success'
   const { data, status } = useQuery('people', fetchPeople)
-  console.log(data)
+
   return (
     <div>
       <h2>People</h2>

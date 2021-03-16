@@ -10,8 +10,12 @@ const fetchPlanets = async () => {
 const Planets = () => {
   // data is the result of fetchPlanets()
   // status is the status of the request - eg. 'loading' 'error' 'success'
-  const { data, status } = useQuery('planets', fetchPlanets)
-  console.log(data)
+  const { data, status } = useQuery('planets', fetchPlanets, {
+    staleTime: 0,
+    //cacheTime: 10
+    onSuccess: () => console.log('data fetched with no problemo')
+  })
+
   return (
     <div>
       <h2>Planets</h2>
